@@ -28,6 +28,10 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
+add_my_fruit = streamlit.text_input('What fruit would you like to add?)
+my_cur.execute("insert into fruit_load_list values ('" + add_my_fruit + "')")
+                                    
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
 # this puts the fruityvice response in dataframe
